@@ -45,7 +45,18 @@ namespace TimFromMarketing
         public static string Print(int? id, string name, string? department)
         {
             // Todo: implement the Print method
-            throw new NotImplementedException("Please implement the (static) Badge.Print() method");
+            //throw new NotImplementedException("Please implement the (static) Badge.Print() method");
+
+            string result = id == null
+            ? department == null
+                ? $"{name} - OWNER"
+                : $"{name} - {department.ToUpper()}"
+            : department == null
+                ? $"[{id}] - {name} - OWNER"
+                : $"[{id}] - {name} - {department.ToUpper()}";
+
+            return result;
+
         }
     }
 }
